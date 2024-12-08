@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Usuario</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="registro.html">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Datos del Usuario Registrado</h2>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Cédula</th>
+                <th>Nombres</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Ciudad</th>
+            </tr>
+            <tr>
+                <td id="idCell"></td>
+                <td id="cedulaCell"></td>
+                <td id="nombreCell"></td>
+                <td id="fechaNacimientoCell"></td>
+                <td id="ciudadCell"></td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Proyecto Web</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Obtener los datos de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            const cedula = urlParams.get('cedula');
+            const nombre = urlParams.get('nombre');
+            const fechaNacimiento = urlParams.get('fechaNacimiento');
+            const ciudad = urlParams.get('ciudad');
+
+            // Mostrar los datos en la tabla
+            document.getElementById('idCell').textContent = id;
+            document.getElementById('cedulaCell').textContent = cedula;
+            document.getElementById('nombreCell').textContent = nombre;
+            document.getElementById('fechaNacimientoCell').textContent = fechaNacimiento;
+            document.getElementById('ciudadCell').textContent = ciudad;
+        });
+    </script>
+</body>
+</html>
